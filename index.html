@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QKSU - Quantum Computing at Kafrelsheikh University</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#facc15',
+                        secondary: '#ca8a04',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #ca8a04 0%, #facc15 100%);
+        }
+        .quantum-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <img src="images/qworld-logo.svg" alt="QKSU Logo" class="h-10 w-10">
+                    <span class="text-2xl font-bold text-primary">QKSU</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-primary">Home</a>
+                    <a href="#about" class="hover:text-primary">About QKSU</a>
+                    <a href="#events" class="hover:text-primary">Events</a>
+                    <a href="https://qworld.net/qegypt/" class="hover:text-primary">QEgypt</a>
+                    <a href="https://qworld.net/" class="hover:text-primary">QWorld</a>
+                    <a href="#contact" class="hover:text-primary">Contact</a>
+                </div>
+                <button class="md:hidden" id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="flex flex-col space-y-4 mt-4">
+                    <a href="#home" class="hover:text-primary">Home</a>
+                    <a href="#about" class="hover:text-primary">About QKSU</a>
+                    <a href="#events" class="hover:text-primary">Events</a>
+                    <a href="https://qworld.net/qegypt/" class="hover:text-primary">QEgypt</a>
+                    <a href="https://qworld.net/" class="hover:text-primary">QWorld</a>
+                    <a href="#contact" class="hover:text-primary">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-black min-h-[90vh] flex items-center justify-center text-white pt-20">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">Welcome to QKSU</h1>
+                    <p class="text-xl md:text-2xl mb-8">Quantum Computing at Kafrelsheikh University</p>
+                    <p class="text-lg mb-8">
+                        QKSU is a branch of QEgypt and QWorld, dedicated to advancing quantum computing education and research 
+                        at Kafrelsheikh University. We are committed to creating an engaging environment for quantum education 
+                        and research.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#about" class="bg-primary text-black px-8 py-3 rounded-full font-semibold hover:bg-secondary transition">Learn More</a>
+                        <a href="#events" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition">Events</a>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+                        <h3 class="text-xl font-bold mb-4 text-primary">What is Quantum Computing?</h3>
+                        <p class="text-gray-300">Quantum computing uses quantum bits (qubits) that can exist in multiple states simultaneously, enabling exponential computational power for certain problems.</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+                        <h3 class="text-xl font-bold mb-4 text-primary">Key Applications</h3>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>• Cryptography</li>
+                            <li>• Drug Discovery</li>
+                            <li>• Optimization</li>
+                            <li>• Machine Learning</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+                        <h3 class="text-xl font-bold mb-4 text-primary">Quantum Gates</h3>
+                        <p class="text-gray-300">Basic operations that manipulate qubits, similar to classical logic gates but with quantum properties like superposition and entanglement.</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+                        <h3 class="text-xl font-bold mb-4 text-primary">Our Focus</h3>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>• Education</li>
+                            <li>• Research</li>
+                            <li>• Community</li>
+                            <li>• Innovation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About QKSU Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">About QKSU</h2>
+            <div class="max-w-3xl mx-auto text-lg text-gray-700">
+                <p class="mb-8">
+                    QKSU is founded by the Faculty of Artificial Intelligence at Kafrelsheikh University, working in collaboration 
+                    with QEgypt and QWorld. Our team consists of members from diverse academic backgrounds, united by our passion 
+                    for quantum computing.
+                </p>
+                <p class="mb-8">
+                    Our main goal is to create an engaging environment for quantum education and research, helping both researchers 
+                    and students in academia while paving the way for industrial applications of quantum technologies.
+                </p>
+                <div class="grid md:grid-cols-2 gap-8 mt-12">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-4">Our Mission</h3>
+                        <ul class="space-y-2">
+                            <li>• Promote quantum computing education</li>
+                            <li>• Foster research in quantum technologies</li>
+                            <li>• Build a strong quantum computing community</li>
+                            <li>• Bridge academia and industry</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-4">Our Vision</h3>
+                        <ul class="space-y-2">
+                            <li>• Become a leading quantum computing hub</li>
+                            <li>• Develop innovative quantum solutions</li>
+                            <li>• Train the next generation of quantum experts</li>
+                            <li>• Contribute to Egypt's quantum ecosystem</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Events & Activities</h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-4">QBronze</h3>
+                    <p class="text-gray-600 mb-4">Introductory quantum computing workshop series</p>
+                    <a href="https://qworld.net/qeducation/" class="text-primary hover:underline">Learn More →</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-4">QSilver</h3>
+                    <p class="text-gray-600 mb-4">Advanced quantum programming workshops</p>
+                    <a href="https://qworld.net/qeducation/" class="text-primary hover:underline">Learn More →</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-4">Research Projects</h3>
+                    <p class="text-gray-600 mb-4">Collaborative quantum research initiatives</p>
+                    <a href="https://qworld.net/qresearch/" class="text-primary hover:underline">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Leadership</h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Nora Mahmoud El-Rashidy -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-6"></div>
+                    <h3 class="text-2xl font-bold mb-2">Nora Mahmoud El-Rashidy</h3>
+                    <p class="text-primary font-semibold mb-4">Supervisor</p>
+                    <p class="mb-2">Associate Professor, Machine Learning and Information Retrieval</p>
+                    <p class="mb-2">Faculty of Artificial Intelligence, Kafrelsheikh University</p>
+                    <p class="mb-2">Email: noura.alrashidy@ai.kfs.edu.eg</p>
+                    <p class="mb-4">Mobile: +201003058159</p>
+                </div>
+
+                <!-- Abdulrahman Yasser Elbanna -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-6"></div>
+                    <h3 class="text-2xl font-bold mb-2">Abdulrahman Yasser Elbanna</h3>
+                    <p class="text-primary font-semibold mb-4">Team Coordinator (Student)</p>
+                    <p class="mb-2">Specialty: Artificial Intelligence</p>
+                    <p class="mb-2">Email: abdoelbanna240@gmail.com</p>
+                    <p class="mb-4">Mobile: +201014423343</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Members Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Team</h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Mohamed Rizk -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4"></div>
+                    <h3 class="text-xl font-bold mb-2">Mohamed Rizk Mohamed</h3>
+                    <p class="text-gray-600 mb-2">Artificial Intelligence</p>
+                    <p class="text-gray-600 mb-2">Team Member</p>
+                    <p class="text-gray-600">mohmedmohmedresk@gmail.com</p>
+                </div>
+                <!-- Abdulrahman Shaheen -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4"></div>
+                    <h3 class="text-xl font-bold mb-2">Abdulrahman Bassyouni Shaheen</h3>
+                    <p class="text-gray-600 mb-2">Artificial Intelligence</p>
+                    <p class="text-gray-600 mb-2">Team Member</p>
+                    <p class="text-gray-600">vitoshanen@gmail.com</p>
+                </div>
+                <!-- Mohamed Elnahry -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4"></div>
+                    <h3 class="text-xl font-bold mb-2">Mohamed Osama Elnahry</h3>
+                    <p class="text-gray-600 mb-2">Artificial Intelligence</p>
+                    <p class="text-gray-600 mb-2">Team Member</p>
+                    <p class="text-gray-600">mo419274@gmail.com</p>
+                </div>
+                <!-- Halla Ayman Atia -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4"></div>
+                    <h3 class="text-xl font-bold mb-2">Halla Ayman Atia</h3>
+                    <p class="text-gray-600 mb-2">Artificial Intelligence</p>
+                    <p class="text-gray-600 mb-2">Team Member</p>
+                    <p class="text-gray-600">hallaayman8122004@gmail.com</p>
+                </div>
+                <!-- Mariam Ahmed Anz -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4"></div>
+                    <h3 class="text-xl font-bold mb-2">Mariam Ahmed Anz</h3>
+                    <p class="text-gray-600 mb-2">Artificial Intelligence</p>
+                    <p class="text-gray-600 mb-2">Team Member</p>
+                    <p class="text-gray-600">mrymnz160@gmail.com</p>
+                </div>
+                <!-- Hams Tamer Abdallah -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4"></div>
+                    <h3 class="text-xl font-bold mb-2">Hams Tamer Abdallah</h3>
+                    <p class="text-gray-600 mb-2">Artificial Intelligence</p>
+                    <p class="text-gray-600 mb-2">Team Member</p>
+                    <p class="text-gray-600">hamstamer0@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Get in Touch</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <form class="space-y-6">
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="name">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="email">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="message">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                            </div>
+                            <button type="submit" class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-secondary transition">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-xl font-bold mb-4">Contact Information</h3>
+                            <div class="flex space-x-4 mt-4">
+                                <a href="https://www.facebook.com/share/12HkRCtfM78/" class="text-primary hover:text-secondary">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg>
+                                </a>
+                                <a href="https://www.facebook.com/share/1AskhZ62X3/" class="text-primary hover:text-secondary">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <p class="text-gray-600">QKSU is proudly part of QEgypt and QWorld.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>© 2025 QKSU. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://qworld.net/qegypt/" class="hover:text-primary">QEgypt</a>
+                    <a href="https://qworld.net/" class="hover:text-primary">QWorld</a>
+                    <a href="https://www.kfs.edu.eg/" class="hover:text-primary">Kafrelsheikh University</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

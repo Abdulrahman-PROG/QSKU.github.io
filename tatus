@@ -1,0 +1,8 @@
+[33mcommit 6a57c2d1e4ca498e5fc2d091a622e1c51a9f9448[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Abdulrahman-PROG <abdoelbanna240@gmail.com>
+Date:   Sat Apr 19 17:38:34 2025 +0200
+
+    Add new team members: Halla Ayman Atia, Mariam Ahmed Anz, and Hams Tamer Abdallah
+
+ index.html | 26 [32m+++++++++++++++++++++++++[m[31m-[m
+ 1 file changed, 25 insertions(+), 1 deletion(-)
