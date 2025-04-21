@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="1000" height="400" viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
     <g transform="translate(0, 0)">
-        <!-- Q Circle with triangle -->
+        <!-- Q Circle -->
         <circle cx="200" cy="200" r="180" fill="#ffc107"/>
-        <!-- Adjusted triangle position and size for better Q appearance -->
-        <path d="M200 100 L300 300 L100 300 Z" fill="#03a9f4"/>
+        <!-- Q tail -->
+        <path d="M340 280 L240 280 A10 10 0 0 1 340 280" fill="#ffc107"/>
+        <!-- Triangle inside Q -->
+        <path d="M200 120 L280 280 L120 280 Z" fill="#03a9f4"/>
         
-        <!-- KSU Text - slightly adjusted position -->
+        <!-- KSU Text -->
         <text x="420" y="300" font-family="Arial Black, sans-serif" font-size="280" font-weight="900" fill="#000000">KSU</text>
     </g>
 </svg> 
